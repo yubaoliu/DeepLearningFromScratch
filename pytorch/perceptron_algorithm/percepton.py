@@ -71,13 +71,26 @@ Y = np.array(Y)
 fig = plt.figure()
 ax1 = fig.add_subplot(111)
 for row in range(len(X)):
-    ax1.scatter(X[row][0], X[row][1], marker='x')
+    if Y[row] == 1:
+        ax1.scatter(X[row][0], X[row][1], color='r', marker='x')
+    else:
+        ax1.scatter(X[row][0], X[row][1], color='b', marker='o')
 
 W = trainPerceptronAlgorithm(X, Y)
-x = np.linspace(min(X.T[0]), max(X.T[0]), 50)
+x = np.linspace(min(X.T[0]), max(X.T[0]), 100)
+for i in range(len(W)):
+    w = W[i]
+    y = w[0]*x + w[1]
+    if i == len(W)-1:
+        plt.plot(x, y, 'r')
+    plt.plot(x, y, '--')
+
 plt.xlim(-0.5, 1.5)
 plt.ylim(-0.5, 1.5)
-for w in W:
-    y = w[0]*x + w[1]
-    plt.plot(x, y)
+
+plt.xlabel('x')
+plt.ylabel('y')
+plt.legend()
+
+
 plt.show()
