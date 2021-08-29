@@ -1,3 +1,9 @@
 [submodule "deep-learning-v2-pytorch"]
 	path = deep-learning-v2-pytorch
 	url = https://github.com/udacity/deep-learning-v2-pytorch.git
+[submodule "DeepLearning"]
+	path = DeepLearning
+	url = https://github.com/wangshusen/DeepLearning.git
+[submodule "wangshusen-DeepLearning"]
+	path = wangshusen-DeepLearning
+	url = https://github.com/wangshusen/DeepLearning.git
